@@ -1,12 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const tableController = require('../controllers/table-controller')
+const {tableController, heighest} = require('../controllers/table-controller')
 
 
 router.get('/data/NSE',async(req, res) => {
     req.tablename = 'nse';
     try{
         const result = await tableController(req, res);
+        
         res.json(result);
     }catch(e){
         console.log(e);
@@ -14,6 +15,16 @@ router.get('/data/NSE',async(req, res) => {
     }
 })
 
+router.get('/data/BSE/highest',async(req, res) => {
+    req.tablename = 'bse';
+    try{
+        const result = await heighest(req, res);
+        res.json(result);
+    }catch(e){
+        console.log(e);
+        res.sendStatus(500);
+    }
+})
 
 router.get('/data/BSE',async(req, res) => {
     req.tablename = 'bse';

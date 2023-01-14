@@ -18,9 +18,9 @@ const isLoggedIn = (req, res, next) => {
         req.userData = decoded
         next();
     }catch(e){
-        console.log(e);
+        // console.log(e);
         return res.status(401).send({
-            msg: "Your session is not valid"
+            "Error": "Invalid Token"
         })
     }
 }

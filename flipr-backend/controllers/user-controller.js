@@ -35,7 +35,9 @@ const authUser = (req, res) => {
                     if(err) return reject(err);
                     if(result.length == 0){
                         console.log("User does not exist.")
-                        res.sendStatus(404);
+                        res.status(404).json({
+                            "Error": "User not found"
+                        });
                     }else{
                         const hashedPassword = result[0].password;
                         // console.log("Hashed Password Here : "+hashedPassword)
@@ -58,7 +60,7 @@ const authUser = (req, res) => {
                             })
                         }else{
                             console.log("Password Incorrect!");
-                            res.send("Password Incorrect!")
+                            res.send({"Error" : "Password Incorrect!"})
                         }
                     }
                     console.log(result);

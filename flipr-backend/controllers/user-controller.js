@@ -110,7 +110,9 @@ const addNewUser = (req, res) => {
 
             if(result.length != 0){
                 console.log("USER already exists.");
-                res.sendStatus(409);
+                res.status(409).json({
+                    "conflict" : "User already exists."
+                });
             }else{
                 db.query(sqlInsert, 
                     [name,email,hashedPassword],

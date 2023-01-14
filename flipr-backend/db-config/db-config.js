@@ -10,8 +10,8 @@ const connection = mysql.createPool({
     user: process.env.SQL_Username || 'newuser',
     password: process.env.SQL_Password || 'newpassword',
     database: process.env.SQL_Database || 'hackathon',
-    port: parseInt(process.env.SQL_PORT) || 3306, 
-    socketPath: '/var/run/mysqld/mysqld.sock'
+    socketPath: '/var/run/mysqld/mysqld.sock',
+    port: parseInt(process.env.SQL_PORT) || 3306 
 });
 
 connection.getConnection((err, connection)=>{

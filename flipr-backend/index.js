@@ -13,7 +13,9 @@ app.use(express.json())
 app.use(cors());
 
 require('./db-config/db-config');
+const dataRouter = require('./routes/get-data');
 
+app.use('/',dataRouter);
 
 app.get('/', (req, res) => {
     res.send('Hello There! We are team ____');

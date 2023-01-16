@@ -2,18 +2,18 @@
 
 Mobile Application to See Stock Charts
 
-# TechStack
+### TechStack
 
 Flutter
 Dart
 
-# Tool
+### Tool
 AndroidStudio
 
-# Architecture
+### Architecture
 MVC architecture is followed in this Application.
 
-# StateManagement
+### StateManagement
 
 Getx is used for statemanagement.
 Reactive State Manager 
@@ -21,12 +21,12 @@ Reactive programming can alienate many people because it is said to be complicat
 
 We have multiple pages.
 
-# Screens:
+### Screens:
 
 1. Home Page: It contains Stock Index data of BSE and NSE.
 2. Company Stock Page: It contains chart of company stock data.
 
-# Data
+### Data
 
 The Data contains Date, low, high, open, close, AdjClose and Volume of specific market day.
 

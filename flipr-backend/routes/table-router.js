@@ -83,4 +83,16 @@ router.get('/data/EicherMotors',async(req, res) => {
     }
 })
 
+router.get('/data/Reliance',async(req, res) => {
+    req.tablename = 'reliance';
+    try{
+        const result = await tableController(req, res);
+        res.json(result);
+    }catch(e){
+        console.log(e);
+        res.sendStatus(500);
+    }
+})
+
+
 module.exports = router;

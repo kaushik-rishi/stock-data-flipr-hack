@@ -60,3 +60,11 @@ So that the database will be created.
 
 Used Digital Ocean's droplet for the deployment.
 
+[Backend Deployment](http://165.232.182.158/)
+  - [NSE](http://165.232.182.158/data/NSE)
+  - [BSE](http://165.232.182.158/data/BSE)
+  - [Cipla](http://165.232.182.158/data/Cipla)
+  - [AshokLeyLand](http://165.232.182.158/data/AshokLeyLand)
+  - [TataSteel](http://165.232.182.158/data/TataSteel)
+  - [EicherMotors](http://165.232.182.158/data/EicherMotors)
+  - [Reliance](http://165.232.182.158/data/Reliance)

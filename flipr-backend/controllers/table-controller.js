@@ -1,5 +1,5 @@
 const db = require('../db-config/db-config');
-const {selectall, getHeighest, getLowest} = require('../model/table-model');
+const {selectall, getHeighest, getLowest, getWithLimit} = require('../model/table-model');
 
 // const gettabledata = (tablename) => {
 //     return query(tablename);
@@ -13,6 +13,16 @@ const tableController = (req, res) => {
         })
     })
 };
+
+
+const tableLimitter = (req, res) => {
+    return new Promise((resolve, reject) => {
+        db.query(getWithLimit(req.tablename, req.resultlimit), (err, result) => {
+            if(err) return reject(err)
+            resolve(result)
+        })
+    })
+}
 
 const heighest = (req, res) => {
     return new Promise((resolve, reject) => {
@@ -43,5 +53,7 @@ const highnlow = (req, res) => {
 
 module.exports = {
     tableController,
-    heighest
+    heighest,
+    highnlow,
+    tableLimitter
 };

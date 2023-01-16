@@ -10,5 +10,9 @@ const getLowest = (tablename) => {
     return `SELECT MIN(low) FROM ${tablename}`;
 }
 
+const getWithLimit = (tablename, lim) => {
+    return  `SELECT * FROM ${tablename} ORDER BY dated LIMIT ${lim}`;
+}
 
-module.exports ={selectall, getHeighest, getLowest};
+
+module.exports ={selectall, getHeighest, getLowest, getWithLimit};
